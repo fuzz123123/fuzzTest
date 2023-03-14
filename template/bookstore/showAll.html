@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1" cellspacing="0">
+        <tr>
+            <td>title</td>
+            <td>price</td>
+            <td>market_price</td>
+            <td>pub</td>
+            <td>op</td>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{book.title|upper}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.market_price}}</td>
+            <td>{{book.pub}}</td>
+            <td>
+                <a href="
+                editPrice?id={{book.id}}
+                &title={{book.title}}
+                &pub={{book.pub}}
+                &price={{book.price}}
+                &mkt_price={{book.market_price}}">更改</a>
+                <a href="doDelete?book_id={{book.id}}" >删除</a>
+            </td>
+        </tr>
+        {% empty %}
+        没有书籍记录！
+        {% endfor %}
+    </table>
+</body>
+</html>

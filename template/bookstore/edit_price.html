@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="..">&lt;back</a>
+    <br>
+    <form action="doEdit/" method="post">
+        <input type="text" name="book_id" value="{{ book_id }}" hidden>
+        <input type="text" name="title" value="{{ title }}" readonly>
+        <input type="text" name="pub" value="{{ pub }}" readonly>
+        <input type="text" name="price" value="{{ price }}">
+        <input type="text" name="mkt_price" value="{{ mkt_price }}">
+        <input type="submit" value="update">
+    </form>
+</body>
+</html>

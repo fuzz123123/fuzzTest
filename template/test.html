@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function set_select_checked(selectId, checkValue){
+            var select = document.getElementById(selectId);
+
+            for (var i = 0; i < select.options.length; i++){
+                if (select.options[i].value == checkValue){
+                    select.options[i].selected = "";
+                    break;
+                }
+            }
+        }
+        set_select_checked('op_select', {{ op }})
+    </script>
+</head>
+<body>
+    <h1>this is a template</h1>
+    <form action="http://127.0.0.1:8000/test/" method="post">
+        <input type="number" name="num_a" value="{{ value_a }}">
+        <select name="op" id="op_select">
+            <option value="0">+</option>
+            <option value="1">-</option>
+            <option value="2" >*</option>
+            <option value="3">/</option>
+        </select>
+        <input type="number" name="num_b" value="{{ value_b }}">
+        <input type="submit" value="go">
+    </form>
+    <div id="result">result: {{ result }}  and op: {{ op }}</div>
+</body>
+</html>
